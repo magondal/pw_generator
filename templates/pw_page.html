@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .cols_in_site {
+            column-count: 2
+        }
+        @media screen and (max-width: 900px) {
+            .cols_in_site{
+                column-count: 1
+            }
+        }
+
+        .page_spacing {
+            margin-left: 5%
+        }
+        
+    </style>
+</head>
+
+
+<body>
+    <div class = cols_in_site> 
+        <h1 class = page_spacing style = "margin-top:3%">Password Generator!!</h1>
+        
+        <br>
+        
+        <p class = page_spacing>
+            Select the length of the password you would like!
+        </p>
+        
+        <ui class = page_spacing>
+            <ul class = page_spacing>
+                Supported Character Sets: [A-Z][a-z][0-9][punc.]
+            </ul>
+            <ul class = page_spacing>
+                Supported length up to 25 characters
+            </ul>    
+            <ul class = page_spacing>
+                Min Length of 5 characters (for security :3!)
+            </ul>
+        </ui>
+
+        <br>
+
+        <form action="{{ url_for('create_pw') }}" method="post">
+            <input type="text" name="pw_length">
+            <input type="submit">
+        </form>
+
+    </div>
+
+</body>
